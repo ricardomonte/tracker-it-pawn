@@ -13,10 +13,10 @@ export const logginUserError = (error) => ({
 
 export const logginUser = (user) => (dispatch) => {
   axios.post('http://localhost:4000/users/sign_in', {
-    email,
-    password,
+    email: user.mail,
+    password: user.password,
   }).then((response) => {
-    localStorage.setItem('token', await response.headers['access-token']);
+    localStorage.setItem('token', response.headers['access-token']);
     dispatch(logginUserSuccess(response.data));
   }).catch((e) => {
     dispatch(logginUserError(e.response.data.error));
