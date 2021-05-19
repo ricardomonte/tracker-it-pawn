@@ -7,6 +7,8 @@ import Home from '../container/Home';
 import SignUpForm from '../container/SingUpForm';
 import SignInForm from '../container/SignInForm';
 import Profile from '../container/Profile';
+import ExpenseForm from '../container/ExpenseForm';
+import DogForm from '../container/DogForm';
 
 function App({ userToken }) {
   useEffect(() => {
@@ -18,6 +20,8 @@ function App({ userToken }) {
       <Route exact path="/sign_up" component={SignUpForm} />
       <Route exact path="/sign_in" component={SignInForm} />
       <Route exact path="/profile" component={Profile} />
+      <Route exact path="/create_expense" component={ExpenseForm} />
+      <Route exact path="/add_dog" component={DogForm} />
     </Switch>
   );
 }
