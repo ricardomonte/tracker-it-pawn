@@ -4,6 +4,8 @@ const expenses = (state = [], action) => {
   switch (action.type) {
     case types.EXPENSES_LOAD_SUCCESS:
       return action.payload;
+    case types.EXPENSE_CREATED_SUCCESS:
+      return action.payload;
     default:
       return state;
   }
