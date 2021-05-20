@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Profile from './Profile';
+import TrackerStyle from '../styles/Home.module.css';
 
 const Home = ({ authUser }) => {
   if (Object.entries(authUser).length > 0) {
@@ -10,13 +11,17 @@ const Home = ({ authUser }) => {
   }
   return (
     <>
-      <div>
-        <Link to="/sign_up">
-          Sign Up
-        </Link>
-        <Link to="/sign_in">
-          Sign In
-        </Link>
+      <div className={TrackerStyle.container}>
+        <div className={TrackerStyle.containerLink}>
+          <Link to="/sign_up" className={TrackerStyle.link}>
+            Sign Up
+          </Link>
+        </div>
+        <div className={TrackerStyle.containerLink}>
+          <Link to="/sign_in" className={TrackerStyle.link}>
+            Sign In
+          </Link>
+        </div>
       </div>
     </>
   );
