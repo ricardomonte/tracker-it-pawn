@@ -40,6 +40,7 @@ export const createExpense = (expenses) => (dispatch) => {
     category: expenses.category,
     detail: expenses.detail,
     amount: expenses.amount,
+    date_payment: expenses.datePayment,
   };
 
   axios.post(url, data, { headers: { Authorization: `Bearer ${auth}` } }).then((response) => {
