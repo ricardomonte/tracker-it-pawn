@@ -1,0 +1,79 @@
+.container {
+  background-color: #F1F2F3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.title {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.8em;
+  align-items: baseline;
+}
+
+.text {
+  padding: 0.8em 0;
+  font-size: 1.5em;
+}
+
+.containerDogExp {
+  padding-top: 1em;
+  background-color: white;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1em;
+  flex-wrap: wrap;
+}
+
+.containerPaw {
+  text-align: center;
+  width: max-content;
+}
+
+.paw, .expense {
+  color: #42B5E8;
+  border: 1px solid #8ED3F1;
+}
+
+.paw:hover, .expense:hover {
+  color: #97E493;
+  border-color: #97E493;
+}
+
+.textDog {
+  font-weight: 300;
+  font-size: small;
+}
+
+.dogCard {
+  margin-top: 0.8em;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1.5em;
+}
+
+.containerLinks {
+  display: flex;
+  width: 100%;
+  margin-top: 4.5em;
+  background-color: #5B8092;
+  column-gap: 2em;
+  padding: 0.5em 0;
+  justify-content: center;
+}
+
+.linkDog, .linkExp {
+  text-decoration: none;
+  color: #AEB1B6;
+}
+
+.plus {
+  transform: translateY(-15px);
+  padding-left: 0.2em;
+}

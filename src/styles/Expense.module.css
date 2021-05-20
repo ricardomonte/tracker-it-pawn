@@ -1,0 +1,36 @@
+.card {
+  width: 100%;
+  background-color: white;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.09);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.cardText {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5em;
+}
+
+.credit {
+  color: #97E493;
+}
+
+.expense {
+  margin: 0;
+  padding: 1.33em 0;
+}
+
+.expenseProgress {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5em;
+}
+
+.date {
+  font-size: 1em;
+  font-weight: 500;
+  color: #42B5E8;
+}
