@@ -12,6 +12,10 @@ const errorReducer = (state = [], action) => {
       return { dogsError: action.payload };
     case types.DOG_CREATED_ERROR:
       return { dogError: action.payload };
+    case types.DOG_UPDATED_ERROR:
+      return { dogUpdateError: action.payload };
+    case types.ONE_DOG_LOAD_ERROR:
+      return { oneDogLoadError: action.payload };
     default:
       return state;
   }
