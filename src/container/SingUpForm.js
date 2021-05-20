@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { signUpUser } from '../actions/logginActions';
+import TrackerStyle from '../styles/Forms.module.css';
 
 const useDidUpdate = (callback, deps) => {
   const hasMount = useRef(false);
@@ -54,39 +55,42 @@ const SingUpForm = ({ authUser, messageSuccess }) => {
   };
 
   return (
-    <div>
-      <p>here goes a sign in form</p>
-
-      <form>
-        <label htmlFor="name">
+    <div className={TrackerStyle.containerTotal}>
+      <form className={TrackerStyle.container}>
+        <label htmlFor="name" className={TrackerStyle.label}>
           name:
-          <input id="name" type="text" value={user.name} name="name" onChange={handleChange} placeholder="your name" />
+          <input className={TrackerStyle.inputs} id="name" type="text" value={user.name} name="name" onChange={handleChange} placeholder="your name" />
         </label>
-        <label htmlFor="lastname">
-          name:
-          <input id="lastname" type="text" value={user.lastname} name="lastname" onChange={handleChange} placeholder="your lastname" />
+        <label htmlFor="lastname" className={TrackerStyle.label}>
+          lastname:
+          <input className={TrackerStyle.inputs} id="lastname" type="text" value={user.lastname} name="lastname" onChange={handleChange} placeholder="your lastname" />
         </label>
-        <label htmlFor="email">
+        <label htmlFor="email" className={TrackerStyle.label}>
           email:
-          <input id="email" type="email" value={user.email} name="email" onChange={handleChange} placeholder="your email" />
+          <input className={TrackerStyle.inputs} id="email" type="email" value={user.email} name="email" onChange={handleChange} placeholder="your email" />
         </label>
-        <label htmlFor="password">
+        <label htmlFor="password" className={TrackerStyle.label}>
           password:
-          <input id="password" type="password" value={user.password} name="password" onChange={handleChange} placeholder="your name" />
+          <input className={TrackerStyle.inputs} id="password" type="password" value={user.password} name="password" onChange={handleChange} placeholder="your name" />
         </label>
-        <button type="button" onClick={handleValidation}>Submit</button>
+        <button type="button" onClick={handleValidation} className={TrackerStyle.btn}>Submit</button>
       </form>
       {
       invalidForm
-        ? <div onMouseOver={handleSpan} onFocus={handleSpan}>invalid formw</div>
+        ? (
+          <div
+            onMouseOver={handleSpan}
+            onFocus={handleSpan}
+            className={TrackerStyle.invalid}
+          >
+            invalid form, try again.
+          </div>
+        )
         : <div />
       }
     </div>
   );
 };
-// const mapStateToProps = (state) => ({
-//   signUpError: state.manageErr,
-// });
 
 const mapDispatchToProps = (distpach) => ({
   authUser: (user) => distpach(signUpUser(user)),
