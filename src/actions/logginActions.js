@@ -2,6 +2,11 @@ import axios from 'axios';
 import * as types from './actionTypes';
 
 export const logginUserSuccess = (userlogged) => ({
+  type: types.LOGGIN_USER_SUCCESS,
+  payload: userlogged,
+});
+
+export const logginSuccess = (userlogged) => ({
   type: types.LOGGIN_SUCCESS,
   payload: userlogged,
 });
@@ -13,11 +18,12 @@ export const logginUserError = (error) => ({
 
 export const logginUser = (user) => (dispatch) => {
   axios.post('http://localhost:4000/users/sign_in', {
-    email: user.mail,
+    email: user.email,
     password: user.password,
   }).then((response) => {
     localStorage.setItem('token', response.headers['access-token']);
-    dispatch(logginUserSuccess(response.data));
+    dispatch(logginUserSuccess(response.data.user));
+    dispatch(logginSuccess(response.data.message));
   }).catch((e) => {
     dispatch(logginUserError(e.response.data.error));
   });
@@ -31,7 +37,8 @@ export const signUpUser = (user) => (dispatch) => {
     password: user.password,
   }).then((response) => {
     localStorage.setItem('token', response.headers['access-token']);
-    dispatch(logginUserSuccess(response.data));
+    dispatch(logginUserSuccess(response.data.user));
+    dispatch(logginSuccess(response.data.message));
   }).catch((e) => {
     dispatch(logginUserError(e.response.data.error));
   });
@@ -43,7 +50,8 @@ export const checkTokenUser = () => (dispatch) => {
     axios.get('http://localhost:4000/api/v1/profile', {
       headers: { Authorization: `Bearer ${auth}` },
     }).then((response) => {
-      dispatch(logginUserSuccess(response.data));
+      dispatch(logginUserSuccess(response.data.user));
+      dispatch(logginSuccess(response.data.message));
     }).catch((e) => {
       dispatch(logginUserError(e));
     });
