@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDog, faWallet, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faDog, faWallet } from '@fortawesome/free-solid-svg-icons';
 import Expense from '../components/Expense';
 import { checkTokenUser } from '../actions/logginActions';
 import { getExpenses } from '../actions/expensesActions';
 import { getDogs } from '../actions/dogsActions';
 import ExpenseChart from '../components/ExpenseChart';
 import MyDogs from '../components/MyDogs';
+import CommonLinks from '../common/CommonLinks';
 import TrackerStyle from '../styles/Profile.module.css';
 
 const Profile = ({
@@ -82,20 +82,7 @@ const Profile = ({
       <div className={TrackerStyle.monthExpense}>
         <ExpenseChart expense={expenses} />
       </div>
-      <div className={TrackerStyle.containerLinks}>
-        <div>
-          <Link className={TrackerStyle.linkDog} to="/add_dog">
-            <FontAwesomeIcon icon={faDog} size="3x" />
-            <FontAwesomeIcon icon={faPlus} size="2x" className={TrackerStyle.plus} />
-          </Link>
-        </div>
-        <div>
-          <Link className={TrackerStyle.linkExp} to="/create_expense">
-            <FontAwesomeIcon icon={faWallet} size="3x" />
-            <FontAwesomeIcon icon={faPlus} size="2x" className={TrackerStyle.plus} />
-          </Link>
-        </div>
-      </div>
+      <CommonLinks />
     </div>
   );
 };
