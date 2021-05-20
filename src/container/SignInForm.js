@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { logginUser } from '../actions/logginActions';
+import TrackerStyle from '../styles/Forms.module.css';
 
 const useDidUpdate = (callback, deps) => {
   const hasMount = useRef(false);
@@ -38,12 +39,11 @@ const SingInForm = ({ userSignIn, messageSuccess }) => {
     setUser(updateUser);
   };
 
-  const handleValidation = (event) => {
-    if (user.name === '' || user.lastname === '' || user.email === '' || user.password === '') {
+  const handleValidation = () => {
+    if (user.email === '' || user.password === '') {
       setInvalidform(true);
       return;
     }
-    event.preventDefault();
     userSignIn(user);
   };
 
@@ -52,21 +52,29 @@ const SingInForm = ({ userSignIn, messageSuccess }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleValidation}>
-        <label htmlFor="email">
+    <div className={TrackerStyle.containerTotal}>
+      <form className={TrackerStyle.container}>
+        <label htmlFor="email" className={TrackerStyle.label}>
           email:
-          <input id="email" type="email" value={user.email} name="email" onChange={handleChange} placeholder="your email" />
+          <input className={TrackerStyle.inputs} id="email" type="email" value={user.email} name="email" onChange={handleChange} placeholder="your email" />
         </label>
-        <label htmlFor="password">
+        <label htmlFor="password" className={TrackerStyle.label}>
           password:
-          <input id="password" type="password" value={user.password} name="password" onChange={handleChange} placeholder="your name" />
+          <input className={TrackerStyle.inputs} id="password" type="password" value={user.password} name="password" onChange={handleChange} placeholder="your name" />
         </label>
-        <button type="submit">Submit</button>
+        <button onClick={handleValidation} className={TrackerStyle.btn} type="button">Submit</button>
       </form>
       {
       invalidForm
-        ? <div onMouseOver={handleSpan} onFocus={handleSpan}>invalid formw</div>
+        ? (
+          <div
+            onMouseOver={handleSpan}
+            onFocus={handleSpan}
+            className={TrackerStyle.invalid}
+          >
+            invalid form
+          </div>
+        )
         : <div />
       }
     </div>
