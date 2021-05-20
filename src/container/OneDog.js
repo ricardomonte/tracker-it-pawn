@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faPaw } from '@fortawesome/free-solid-svg-icons';
 import { getOneDog, updateDog } from '../actions/dogsActions';
 import PlayTimeForm from '../components/PlayTimeForm';
+import CommonLinks from '../common/CommonLinks';
 import TrackerStyle from '../styles/OneDog.module.css';
 
 const OneDog = ({
@@ -60,6 +61,7 @@ const OneDog = ({
         { invisible ? <PlayTimeForm id={match.params.id} UpdatePlay={updatePlayDog} /> : <div /> }
         <Link to="/profile" className={TrackerStyle.back}>Back</Link>
       </div>
+      <CommonLinks />
     </div>
   );
 };

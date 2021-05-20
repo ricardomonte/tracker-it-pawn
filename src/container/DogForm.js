@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { useHistory, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { createDog } from '../actions/dogsActions';
+import CommonLinks from '../common/CommonLinks';
 import TrackerStyle from '../styles/Forms.module.css';
 
 const useDidUpdate = (callback, deps) => {
@@ -86,6 +87,7 @@ const DogForm = ({ dogCreate, dogSuccess }) => {
         : <div />
       }
       <Link to="/profile" className={TrackerStyle.back}>Back</Link>
+      <CommonLinks />
     </div>
   );
 };
