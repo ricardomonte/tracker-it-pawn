@@ -62,6 +62,7 @@ const Profile = ({
       { visibleDog
         ? (
           <div className={TrackerStyle.dogCard}>
+            <h3>My Friend(s)</h3>
             { dogs.length > 0 && dogs.map((element) => (
               <MyDogs key={element.name} dog={element} />
             ))}
@@ -71,13 +72,14 @@ const Profile = ({
       { visibleExp
         ? (
           <div className={TrackerStyle.dogCard}>
+            <h3>My Expenses</h3>
             { expenses.length > 0 && expenses.map((element) => (
               <Expense key={element.category} expense={element} />
             ))}
           </div>
         )
         : <div />}
-      <div>
+      <div className={TrackerStyle.monthExpense}>
         <ExpenseChart expense={expenses} />
       </div>
       <div className={TrackerStyle.containerLinks}>
