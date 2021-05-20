@@ -4,8 +4,6 @@ const CreateDate = (storedDate, month, year) => {
   const yesterday = today - 1;
   const strToday = today.toString();
   const strYesterday = yesterday.toString();
-  console.log(typeof storedDate);
-  console.log(strToday);
 
   if (strToday === storedDate) {
     return 'Today';
