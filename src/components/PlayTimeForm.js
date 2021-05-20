@@ -35,7 +35,7 @@ const PlayTimeForm = ({ id, UpdatePlay }) => {
 };
 
 PlayTimeForm.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   UpdatePlay: PropTypes.func.isRequired,
 };
 
