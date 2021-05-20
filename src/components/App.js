@@ -9,20 +9,24 @@ import SignInForm from '../container/SignInForm';
 import Profile from '../container/Profile';
 import ExpenseForm from '../container/ExpenseForm';
 import DogForm from '../container/DogForm';
+import Header from '../common/Header';
 
 function App({ userToken }) {
   useEffect(() => {
     userToken();
   }, []);
   return (
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/sign_up" component={SignUpForm} />
-      <Route exact path="/sign_in" component={SignInForm} />
-      <Route exact path="/profile" component={Profile} />
-      <Route exact path="/create_expense" component={ExpenseForm} />
-      <Route exact path="/add_dog" component={DogForm} />
-    </Switch>
+    <>
+      <Header />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/sign_up" component={SignUpForm} />
+        <Route exact path="/sign_in" component={SignInForm} />
+        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/create_expense" component={ExpenseForm} />
+        <Route exact path="/add_dog" component={DogForm} />
+      </Switch>
+    </>
   );
 }
 
