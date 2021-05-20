@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import TrackerStyle from '../styles/ExpenseMonthly.module.css';
 
 const ExpenseChart = ({ expense }) => {
   const date = new Date();
@@ -13,7 +14,7 @@ const ExpenseChart = ({ expense }) => {
 
   const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'October', 'Nov', 'Dec'];
   return (
-    <div style={{ width: 200, height: 200 }}>
+    <div className={TrackerStyle.container}>
       <h3>{`Expenses in ${month[currentMonth]}`}</h3>
       <CircularProgressbar
         value={total}
