@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { createDog } from '../actions/dogsActions';
+import TrackerStyle from '../styles/Forms.module.css';
 
 const useDidUpdate = (callback, deps) => {
   const hasMount = useRef(false);
@@ -20,6 +21,7 @@ const DogForm = ({ dogCreate, dogSuccess }) => {
   const [dog, setDog] = useState({
     name: '',
     breed: '',
+    kilograms: '',
   });
 
   const [invalidForm, setInvalidform] = useState(false);
@@ -39,12 +41,13 @@ const DogForm = ({ dogCreate, dogSuccess }) => {
     setDog(updateDog);
   };
 
-  const handleValidation = (event) => {
-    if (dog.name === '' || dog.breed === '') {
+  const handleValidation = () => {
+    if (dog.name === '' || dog.breed === '' || dog.kilograms === '' || dog.kilograms === '0') {
       setInvalidform(true);
       return;
     }
-    event.preventDefault();
+    const kilogramsNumeric = parseInt(dog.kilograms, 10);
+    setDog({ ...dog, kilograms: kilogramsNumeric });
     dogCreate(dog);
   };
 
@@ -53,23 +56,36 @@ const DogForm = ({ dogCreate, dogSuccess }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleValidation}>
-        <label htmlFor="name">
-          Name of Dog:
-          <input id="name" type="text" value={dog.name} name="name" onChange={handleChange} placeholder="E.g. Food" />
+    <div className={TrackerStyle.containerTotal}>
+      <form className={TrackerStyle.container}>
+        <label htmlFor="name" className={TrackerStyle.label}>
+          Name of your Dog:
+          <input className={TrackerStyle.inputs} id="name" type="text" value={dog.name} name="name" onChange={handleChange} placeholder="E.g. Jack" />
         </label>
-        <label htmlFor="breed">
-          Breed of the dog:
-          <input id="breed" type="text" value={dog.breed} name="breed" onChange={handleChange} placeholder="E.g. Buy food for fido" />
+        <label className={TrackerStyle.label} htmlFor="breed">
+          Breed of your dog:
+          <input className={TrackerStyle.inputs} id="breed" type="text" value={dog.breed} name="breed" onChange={handleChange} placeholder="E.g. Mix Breed" />
         </label>
-        <button type="submit">Submit</button>
+        <label className={TrackerStyle.label} htmlFor="kilograms">
+          How many kilograms your dog weigh?:
+          <input className={TrackerStyle.inputs} id="kilograms" type="number" value={dog.kilograms} name="kilograms" onChange={handleChange} placeholder="E.g. 12" />
+        </label>
+        <button type="button" onClick={handleValidation} className={TrackerStyle.btn}>Submit</button>
       </form>
       {
       invalidForm
-        ? <div onMouseOver={handleSpan} onFocus={handleSpan}>invalid formw</div>
+        ? (
+          <div
+            onMouseOver={handleSpan}
+            onFocus={handleSpan}
+            className={TrackerStyle.invalid}
+          >
+            invalid form
+          </div>
+        )
         : <div />
       }
+      <Link to="/profile" className={TrackerStyle.back}>Back</Link>
     </div>
   );
 };
