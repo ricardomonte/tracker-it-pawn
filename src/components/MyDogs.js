@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPaw } from '@fortawesome/free-solid-svg-icons';
+import TrackerStyle from '../styles/MyDogs.module.css';
 
 const MyDogs = ({ dog }) => (
-  <>
-    <h3>this will render my dogs</h3>
-    <h4>{dog.name}</h4>
-  </>
+  <div className={TrackerStyle.card}>
+    <FontAwesomeIcon icon={faPaw} size="2x" className={TrackerStyle.paw} />
+    <h4 className={TrackerStyle.dog}>{dog.name}</h4>
+  </div>
 );
 
 MyDogs.propTypes = {
