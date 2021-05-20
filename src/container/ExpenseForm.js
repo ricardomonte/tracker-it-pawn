@@ -1,23 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
-// import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { createExpense } from '../actions/expensesActions';
 
-const ExpenseForm = ({ expenseCreate }) => {
+const useDidUpdate = (callback, deps) => {
+  const hasMount = useRef(false);
+
+  useEffect(() => {
+    if (hasMount.current) {
+      callback();
+    } else {
+      hasMount.current = true;
+    }
+  }, deps);
+};
+
+const ExpenseForm = ({ expenseCreate, expenseSuccess }) => {
   const [expense, setExpense] = useState({
     category: '',
     detail: '',
     amount: '',
+    datePayment: '',
   });
 
   const [invalidForm, setInvalidform] = useState(false);
 
-  // const history = useHistory();
+  const history = useHistory();
+
+  const toProfile = () => {
+    history.push('/profile');
+  };
+
+  useDidUpdate(() => {
+    toProfile();
+  }, [expenseSuccess]);
 
   const handleChange = (event) => {
     const updateExpense = { ...expense, [event.target.name]: event.target.value };
-    // updateExpense.amount = parseInt(updateExpense.amount, 10);
     setExpense(updateExpense);
   };
 
@@ -30,7 +50,6 @@ const ExpenseForm = ({ expenseCreate }) => {
     const amountNumeric = parseInt(expense.amount, 10);
     setExpense({ ...expense, amount: amountNumeric });
     expenseCreate(expense);
-    // history.push('/profile');
   };
 
   const handleSpan = () => {
@@ -52,6 +71,10 @@ const ExpenseForm = ({ expenseCreate }) => {
           Amount:
           <input id="amount" type="number" value={expense.amount} name="amount" onChange={handleChange} />
         </label>
+        <label htmlFor="datePayment">
+          Amount:
+          <input id="datePayment" type="date" value={expense.datePayment} name="datePayment" onChange={handleChange} />
+        </label>
         <button type="submit" onClick={handleValidation}>Submit</button>
       </form>
       {
@@ -63,12 +86,17 @@ const ExpenseForm = ({ expenseCreate }) => {
   );
 };
 
+const mapStateToProps = (state) => ({
+  expenseSuccess: state.createdReducer,
+});
+
 const mapDispatchToProps = (dispatch) => ({
   expenseCreate: (expense) => dispatch(createExpense(expense)),
 });
 
 ExpenseForm.propTypes = {
   expenseCreate: PropTypes.func.isRequired,
+  expenseSuccess: PropTypes.string.isRequired,
 };
 
-export default connect(null, mapDispatchToProps)(ExpenseForm);
+export default connect(mapStateToProps, mapDispatchToProps)(ExpenseForm);

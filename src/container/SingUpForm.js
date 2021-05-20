@@ -1,10 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { signUpUser } from '../actions/logginActions';
 
-const SingUpForm = ({ authUser }) => {
+const useDidUpdate = (callback, deps) => {
+  const hasMount = useRef(false);
+
+  useEffect(() => {
+    if (hasMount.current) {
+      callback();
+    } else {
+      hasMount.current = true;
+    }
+  }, deps);
+};
+
+const SingUpForm = ({ authUser, messageSuccess }) => {
   const [user, setUser] = useState({
     name: '',
     lastname: '',
@@ -13,6 +25,14 @@ const SingUpForm = ({ authUser }) => {
   });
 
   const history = useHistory();
+
+  const redirect = () => {
+    history.push('/profile');
+  };
+
+  useDidUpdate(() => {
+    redirect();
+  }, [messageSuccess]);
 
   const [invalidForm, setInvalidform] = useState(false);
 
@@ -27,7 +47,6 @@ const SingUpForm = ({ authUser }) => {
       return;
     }
     authUser(user);
-    history.push('/profile');
   };
 
   const handleSpan = () => {
@@ -73,14 +92,13 @@ const mapDispatchToProps = (distpach) => ({
   authUser: (user) => distpach(signUpUser(user)),
 });
 
-// const mapStateToProps = (state) => ({
-//   loggedUser: state.authenticatedUser,
-// });
+const mapStateToProps = (state) => ({
+  messageSuccess: state.createdReducer,
+});
 
 SingUpForm.propTypes = {
   authUser: PropTypes.func.isRequired,
-  // loggedUser: PropTypes.instanceOf(Object).isRequired,
-  // signUpError: PropTypes.instanceOf(Object).isRequired,
+  messageSuccess: PropTypes.string.isRequired,
 };
 
-export default connect(null, mapDispatchToProps)(SingUpForm);
+export default connect(mapStateToProps, mapDispatchToProps)(SingUpForm);

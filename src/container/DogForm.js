@@ -1,10 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { createDog } from '../actions/dogsActions';
 
-const DogForm = ({ dogCreate }) => {
+const useDidUpdate = (callback, deps) => {
+  const hasMount = useRef(false);
+
+  useEffect(() => {
+    if (hasMount.current) {
+      callback();
+    } else {
+      hasMount.current = true;
+    }
+  }, deps);
+};
+
+const DogForm = ({ dogCreate, dogSuccess }) => {
   const [dog, setDog] = useState({
     name: '',
     breed: '',
@@ -13,6 +25,14 @@ const DogForm = ({ dogCreate }) => {
   const [invalidForm, setInvalidform] = useState(false);
 
   const history = useHistory();
+
+  const toProfile = () => {
+    history.push('/profile');
+  };
+
+  useDidUpdate(() => {
+    toProfile();
+  }, [dogSuccess]);
 
   const handleChange = (event) => {
     const updateDog = { ...dog, [event.target.name]: event.target.value };
@@ -25,7 +45,6 @@ const DogForm = ({ dogCreate }) => {
       return;
     }
     event.preventDefault();
-    history.push('/profile');
     dogCreate(dog);
   };
 
@@ -35,7 +54,7 @@ const DogForm = ({ dogCreate }) => {
 
   return (
     <div>
-      <form>
+      <form onSubmit={handleValidation}>
         <label htmlFor="name">
           Name of Dog:
           <input id="name" type="text" value={dog.name} name="name" onChange={handleChange} placeholder="E.g. Food" />
@@ -44,7 +63,7 @@ const DogForm = ({ dogCreate }) => {
           Breed of the dog:
           <input id="breed" type="text" value={dog.breed} name="breed" onChange={handleChange} placeholder="E.g. Buy food for fido" />
         </label>
-        <button type="submit" onClick={handleValidation}>Submit</button>
+        <button type="submit">Submit</button>
       </form>
       {
       invalidForm
@@ -55,12 +74,17 @@ const DogForm = ({ dogCreate }) => {
   );
 };
 
+const mapStateToProps = (state) => ({
+  dogSuccess: state.createdReducer,
+});
+
 const mapDispatchToProps = (dispatch) => ({
   dogCreate: (dog) => dispatch(createDog(dog)),
 });
 
 DogForm.propTypes = {
   dogCreate: PropTypes.func.isRequired,
+  dogSuccess: PropTypes.string.isRequired,
 };
 
-export default connect(null, mapDispatchToProps)(DogForm);
+export default connect(mapStateToProps, mapDispatchToProps)(DogForm);
