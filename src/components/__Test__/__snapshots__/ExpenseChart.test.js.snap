@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Content from Expense matches snapshot 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <h3>
+      Expenses in May
+    </h3>
+    <svg
+      class="CircularProgressbar "
+      data-test-id="CircularProgressbar"
+      viewBox="0 0 100 100"
+    >
+      <path
+        class="CircularProgressbar-trail"
+        d="
+      M 50,50
+      m 0,-46
+      a 46,46 0 1 1 0,92
+      a 46,46 0 1 1 0,-92
+    "
+        fill-opacity="0"
+        stroke-width="8"
+        style="stroke-dasharray: 289.02652413026095px 289.02652413026095px; stroke-dashoffset: 0px;"
+      />
+      <path
+        class="CircularProgressbar-path"
+        d="
+      M 50,50
+      m 0,-46
+      a 46,46 0 1 1 0,92
+      a 46,46 0 1 1 0,-92
+    "
+        fill-opacity="0"
+        stroke-width="8"
+        style="stroke-dasharray: 289.02652413026095px 289.02652413026095px; stroke-dashoffset: 289.02652413026095px;"
+      />
+      <text
+        class="CircularProgressbar-text"
+        x="50"
+        y="50"
+      >
+        0 euros
+      </text>
+    </svg>
+  </div>
+</div>
+`;

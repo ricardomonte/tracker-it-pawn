@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Content from Expense matches snapshot 1`] = `
+<div>
+  <div
+    class="containerTotal"
+  >
+    <form
+      class="container"
+    >
+      <label
+        class="label"
+        for="hour"
+      >
+        How much time you spend playing weakly with your dog (aprox):
+        <input
+          class="inputs"
+          id="hour"
+          name="hour"
+          placeholder="0"
+          type="number"
+          value=""
+        />
+      </label>
+      <button
+        class="btn"
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+`;
