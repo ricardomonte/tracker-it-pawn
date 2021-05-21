@@ -10,6 +10,8 @@ const createdReducer = (state = [], action) => {
       return action.payload;
     case types.DOG_UPDATED_SUCCESS:
       return action.payload;
+    case types.PLAYHOUR_CREATED_SUCCESS:
+      return action.payload;
     default:
       return state;
   }
