@@ -9,6 +9,7 @@ import SignInForm from '../container/SignInForm';
 import Profile from '../container/Profile';
 import ExpenseForm from '../container/ExpenseForm';
 import DogForm from '../container/DogForm';
+import HourPlayForm from '../container/PlayHour';
 import OneDog from '../container/OneDog';
 import Header from '../common/Header';
 
@@ -26,6 +27,7 @@ function App({ userToken }) {
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/create_expense" component={ExpenseForm} />
         <Route exact path="/add_dog" component={DogForm} />
+        <Route exact path="/create_hour" component={HourPlayForm} />
         <Route exact path="/dog/:id" component={OneDog} />
       </Switch>
     </>
