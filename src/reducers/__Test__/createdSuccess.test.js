@@ -1,8 +1,8 @@
-import createdReducer from '../createdSuccess'
-import { logginSuccess }  from '../../actions/logginActions';
-import { expenseCreatedSuccess }  from '../../actions/expensesActions';
-import { dogCreatedSuccess, dogUpdatedSuccess }  from '../../actions/dogsActions';
-import { playHourCreatedSuccess }  from '../../actions/playHoursActions';
+import createdReducer from '../createdSuccess';
+import { logginSuccess } from '../../actions/logginActions';
+import { expenseCreatedSuccess } from '../../actions/expensesActions';
+import { dogCreatedSuccess, dogUpdatedSuccess } from '../../actions/dogsActions';
+import { playHourCreatedSuccess } from '../../actions/playHoursActions';
 
 test('createdReducer will update state and return it', () => {
   const firstState = 'a';
@@ -23,7 +23,6 @@ test('createdReducer will update state and return it', () => {
   expect(newState).toEqual('b');
   expect(newState).not.toEqual(firstState);
 });
-
 
 test('createdReducer will update state and return it', () => {
   const firstState = 'a';

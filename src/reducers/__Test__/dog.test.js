@@ -1,5 +1,5 @@
 import dog from '../dogs';
-import { dogsLoadSuccess }  from '../../actions/dogsActions';
+import { dogsLoadSuccess } from '../../actions/dogsActions';
 
 test('authUser will update state and return it', () => {
   const firstState = 'a';

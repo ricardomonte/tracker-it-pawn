@@ -10,13 +10,13 @@
 .containerLink {
   height: 3em;
   width: 50%;
-  background-color: #97E493;
+  background-color: #97e493;
   border-radius: 0.2em;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.09);
+  box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.09);
 }
 
 .link {

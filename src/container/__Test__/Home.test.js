@@ -6,7 +6,6 @@ import { render } from '@testing-library/react';
 import configureStore from '../../configStore';
 import Home from '../Home';
 
-
 test('Home will be render', () => {
   const store = configureStore();
   render(

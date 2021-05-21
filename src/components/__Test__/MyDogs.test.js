@@ -9,7 +9,7 @@ test('Content from Expense matches snapshot', () => {
   const content = render(
     <BrowserRouter>
       <MyDogs dog={MockData[0]} />
-    </BrowserRouter>
+    </BrowserRouter>,
   );
   expect(content.container).toMatchSnapshot();
 });

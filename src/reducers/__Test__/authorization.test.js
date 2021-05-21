@@ -1,5 +1,5 @@
 import authUser from '../authorization';
-import { logginUserSuccess }  from '../../actions/logginActions';
+import { logginUserSuccess } from '../../actions/logginActions';
 
 test('authUser will update state and return it', () => {
   const firstState = 'a';

@@ -6,7 +6,6 @@ import { render } from '@testing-library/react';
 import configureStore from '../../configStore';
 import ExpenseForm from '../ExpenseForm';
 
-
 test('ExpenseForm will be render', () => {
   const store = configureStore();
   render(

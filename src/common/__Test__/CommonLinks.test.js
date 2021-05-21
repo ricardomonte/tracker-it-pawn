@@ -8,7 +8,7 @@ test('Content from About matches snapshot', () => {
   const content = render(
     <BrowserRouter>
       <CommonLinks />
-    </BrowserRouter>
+    </BrowserRouter>,
   );
   expect(content.container).toMatchSnapshot();
 });

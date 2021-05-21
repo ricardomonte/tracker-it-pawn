@@ -1,5 +1,5 @@
 import expenses from '../expenses';
-import { expensesLoadSuccess }  from '../../actions/expensesActions';
+import { expensesLoadSuccess } from '../../actions/expensesActions';
 
 test('authUser will update state and return it', () => {
   const firstState = 'a';

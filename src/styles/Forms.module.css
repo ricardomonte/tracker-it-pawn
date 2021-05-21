@@ -11,7 +11,7 @@
   padding: 1em;
   background-color: white;
   border-radius: 0.5em;
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.09);
+  box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.09);
 }
 
 .label {
@@ -23,21 +23,21 @@
   font-weight: 500;
   font-size: 1.2em;
   text-transform: capitalize;
-  color: #5B8092;
+  color: #5b8092;
 }
 
 .inputs {
   width: 100%;
   height: 2em;
   border: none;
-  border: 1px solid #AEB1B6;
+  border: 1px solid #aeb1b6;
   border-radius: 0.3em;
 }
 
 .btn {
   width: 80%;
   height: 2.5em;
-  background: #97E493;
+  background: #97e493;
   border: none;
   border-radius: 0.3em;
   font-size: 1.2em;
@@ -62,7 +62,7 @@
 .back {
   margin-left: 2em;
   text-decoration: none;
-  color: #42B5E8;
+  color: #42b5e8;
   font-weight: 500;
   font-size: 1.2em;
 }

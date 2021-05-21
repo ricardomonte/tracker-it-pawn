@@ -1,5 +1,5 @@
 import HoursDog from '../loadHoursDog';
-import { playHourDogLoadSuccess }  from '../../actions/playHoursActions';
+import { playHourDogLoadSuccess } from '../../actions/playHoursActions';
 
 test('authUser will update state and return it', () => {
   const firstState = 'a';

@@ -6,7 +6,6 @@ import { render } from '@testing-library/react';
 import configureStore from '../../configStore';
 import DogForm from '../DogForm';
 
-
 test('DogForm will be render', () => {
   const store = configureStore();
   render(

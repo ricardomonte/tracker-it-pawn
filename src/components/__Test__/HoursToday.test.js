@@ -6,7 +6,7 @@ import HoursToday from '../HoursToday';
 
 test('Content from Expense matches snapshot', () => {
   const content = render(
-    <HoursToday myHours={MockDataDates} weeklyPlayTime={15} />
+    <HoursToday myHours={MockDataDates} weeklyPlayTime={15} />,
   );
   expect(content.container).toMatchSnapshot();
 });
