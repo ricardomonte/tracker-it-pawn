@@ -9,7 +9,7 @@ import { loadPlayHourDog } from '../actions/playHoursActions';
 import PlayTimeForm from '../components/PlayTimeForm';
 import CommonLinks from '../common/CommonLinks';
 import TrackerStyle from '../styles/OneDog.module.css';
-import HoursToday from './HoursToday';
+import HoursToday from '../components/HoursToday';
 
 const OneDog = ({
   match, getDog, onlyDog, updatePlayDog, getHours, myHours,

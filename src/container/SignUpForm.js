@@ -17,7 +17,7 @@ const useDidUpdate = (callback, deps) => {
   }, deps);
 };
 
-const SingUpForm = ({ authUser, messageSuccess }) => {
+const SignUpForm = ({ authUser, messageSuccess }) => {
   const [user, setUser] = useState({
     name: '',
     lastname: '',
@@ -100,9 +100,9 @@ const mapStateToProps = (state) => ({
   messageSuccess: state.createdReducer,
 });
 
-SingUpForm.propTypes = {
+SignUpForm.propTypes = {
   authUser: PropTypes.func.isRequired,
-  messageSuccess: PropTypes.string.isRequired,
+  messageSuccess: PropTypes.instanceOf(Array).isRequired,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SingUpForm);
+export default connect(mapStateToProps, mapDispatchToProps)(SignUpForm);

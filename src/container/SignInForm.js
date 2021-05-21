@@ -17,7 +17,7 @@ const useDidUpdate = (callback, deps) => {
   }, deps);
 };
 
-const SingInForm = ({ userSignIn, messageSuccess }) => {
+const SignInForm = ({ userSignIn, messageSuccess }) => {
   const [user, setUser] = useState({
     email: '',
     password: '',
@@ -89,9 +89,9 @@ const mapDispatchToProps = (dispatch) => ({
   userSignIn: (user) => dispatch(logginUser(user)),
 });
 
-SingInForm.propTypes = {
+SignInForm.propTypes = {
   userSignIn: PropTypes.func.isRequired,
-  messageSuccess: PropTypes.string.isRequired,
+  messageSuccess: PropTypes.instanceOf(Array).isRequired,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SingInForm);
+export default connect(mapStateToProps, mapDispatchToProps)(SignInForm);

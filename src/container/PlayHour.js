@@ -118,7 +118,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 HourPlayForm.propTypes = {
   hourCreate: PropTypes.func.isRequired,
-  hourSuccess: PropTypes.string.isRequired,
+  hourSuccess: PropTypes.instanceOf(Array).isRequired,
   AllMyDogs: PropTypes.instanceOf(Array).isRequired,
 };
 
