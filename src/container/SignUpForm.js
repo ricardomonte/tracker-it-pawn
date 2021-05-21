@@ -102,7 +102,7 @@ const mapStateToProps = (state) => ({
 
 SignUpForm.propTypes = {
   authUser: PropTypes.func.isRequired,
-  messageSuccess: PropTypes.instanceOf(Array).isRequired,
+  messageSuccess: PropTypes.string.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignUpForm);

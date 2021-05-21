@@ -1,6 +1,6 @@
 import * as types from '../actions/actionTypes';
 
-const createdReducer = (state = [], action) => {
+const createdReducer = (state = '', action) => {
   switch (action.type) {
     case types.LOGGIN_SUCCESS:
       return action.payload;

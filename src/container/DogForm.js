@@ -102,7 +102,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 DogForm.propTypes = {
   dogCreate: PropTypes.func.isRequired,
-  dogSuccess: PropTypes.instanceOf(Array).isRequired,
+  dogSuccess: PropTypes.string.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(DogForm);

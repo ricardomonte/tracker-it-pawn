@@ -91,7 +91,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 SignInForm.propTypes = {
   userSignIn: PropTypes.func.isRequired,
-  messageSuccess: PropTypes.instanceOf(Array).isRequired,
+  messageSuccess: PropTypes.string.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignInForm);

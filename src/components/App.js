@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { checkTokenUser } from '../actions/logginActions';
 import Home from '../container/Home';
-import SignUpForm from '../container/SingUpForm';
+import SignUpForm from '../container/SignUpForm';
 import SignInForm from '../container/SignInForm';
 import Profile from '../container/Profile';
 import ExpenseForm from '../container/ExpenseForm';
