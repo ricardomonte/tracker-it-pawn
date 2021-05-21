@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as types from './actionTypes';
 
-const url = 'http://localhost:4000/api/v1/expenses';
+const url = 'https://tracker-tracker-api-fp.herokuapp.com/api/v1/expenses';
 
 export const expenseCreatedSuccess = (expenses) => ({
   type: types.EXPENSE_CREATED_SUCCESS,

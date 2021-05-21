@@ -17,7 +17,7 @@ export const logginUserError = (error) => ({
 });
 
 export const logginUser = (user) => (dispatch) => {
-  axios.post('http://localhost:4000/users/sign_in', {
+  axios.post('https://tracker-tracker-api-fp.herokuapp.com/users/sign_in', {
     email: user.email,
     password: user.password,
   }).then((response) => {
@@ -30,7 +30,7 @@ export const logginUser = (user) => (dispatch) => {
 };
 
 export const signUpUser = (user) => (dispatch) => {
-  axios.post('http://localhost:4000/users/sign_up', {
+  axios.post('https://tracker-tracker-api-fp.herokuapp.com/users/sign_up', {
     name: user.name,
     lastname: user.lastname,
     email: user.email,
@@ -47,7 +47,7 @@ export const signUpUser = (user) => (dispatch) => {
 export const checkTokenUser = () => (dispatch) => {
   const auth = localStorage.token;
   if (auth) {
-    axios.get('http://localhost:4000/api/v1/profile', {
+    axios.get('https://tracker-tracker-api-fp.herokuapp.com/api/v1/profile', {
       headers: { Authorization: `Bearer ${auth}` },
     }).then((response) => {
       dispatch(logginUserSuccess(response.data.user));

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as types from './actionTypes';
 
-const url = 'http://localhost:4000/api/v1/dogs';
+const url = 'https://tracker-tracker-api-fp.herokuapp.com/api/v1/dogs';
 
 export const dogCreatedSuccess = (dog) => ({
   type: types.DOG_CREATED_SUCCESS,
