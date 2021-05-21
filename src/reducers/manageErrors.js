@@ -16,6 +16,10 @@ const errorReducer = (state = [], action) => {
       return { dogUpdateError: action.payload };
     case types.ONE_DOG_LOAD_ERROR:
       return { oneDogLoadError: action.payload };
+    case types.PLAYHOUR_CREATED_ERROR:
+      return { playHour: action.payload };
+    case types.PLAYHOUR_DOG_LOAD_ERROR:
+      return { dogHours: action.payload };
     default:
       return state;
   }
