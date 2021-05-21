@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Content from About matches snapshot 1`] = `
+<div>
+  <div
+    class="title"
+  >
+    <h1
+      class="text"
+    >
+      Track-It-Pawn
+    </h1>
+  </div>
+</div>
+`;
