@@ -59,6 +59,7 @@ export const createDog = (dogs) => (dispatch) => {
   const data = {
     name: dogs.name,
     breed: dogs.breed,
+    kilograms: dogs.kilograms,
   };
 
   axios.post(url, data, { headers: { Authorization: `Bearer ${auth}` } }).then((response) => {
