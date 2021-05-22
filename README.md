@@ -1,70 +1,87 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# TRACKER-IT-PAWN
 
-## Available Scripts
+**TRACKER-IT-PAWN is a simple app where the users can keep track of how much they expend on their beloved dogs and how much time they invest with them. To be able to keep track of this, the user must first sign up or sign in. Once done, he will be redirected to the page where the user can add expenses and his dog(s). This project is built as the final project of Microvers. The main goal for this is to create an app application where you apply all that you learned during this time in Microvers. So for this project, this React-Redux application fetch the data from a Rails API application that I built.**
 
-In the project directory, you can run:
+![website screenshots](https://media.giphy.com/media/O8RbrWFsSTczJEO53I/giphy.gif)
 
-### `npm start`
+## :hammer: Built with:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Html
+- JavaScript
+- React
+- Redux
+- Axios
+- Jest
+- React Testing Library
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## :red_circle: Live Demo:
 
-### `npm test`
+[Live demo](https://tracker-it-pawn.herokuapp.com/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## :construction_worker: Getting Started
 
-### `npm run build`
+To get a local copy up and running follow these simple steps:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Open the terminal where you want to clone this project and paste.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+    git@github.com:ricardomonte/tracker-it-pawn.git
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Access the folder cloned.
 
-### `npm run eject`
+```
+    cd tracker-it-pawn
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Install dependencies.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+    npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Lunch the App.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+    npm start
+```
 
-## Learn More
+## :heavy_check_mark: Test
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+For testing:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Open in terminal the folder just cloned.
+- If you run 'npm install', continue reading. If not follow the instructions in the Getting Started section
+- To run the test, in the terminal run.
 
-### Code Splitting
+```
+    npm run test
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## :bust_in_silhouette: Author
 
-### Analyzing the Bundle Size
+- Github: [@ricardomonte](https://github.com/ricardomonte)
+- Twitter: [@ramnkco](https://twitter.com/ramnkco)
+- LinkedIn: [Ricardo Montenegro](https://www.linkedin.com/in/ricantomontenegro/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## :raised_hand: :raised_hand: Contributions
 
-### Making a Progressive Web App
+Contributions, issues and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Feel free to check the [issues here](https://github.com/ricardomonte/stadistics-catalogue/issues).
 
-### Advanced Configuration
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Give a :star: if you like this project!.
 
-### Deployment
+## :grey_exclamation: Acknowlegment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- To [Microverse](https://www.microverse.org/)
+- Mentor.
+- Stand up team
+- [Design](https://www.behance.net/gallery/13271423/Bodytrackit-An-iOs-app-Branding-UX-and-UI) idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella)
 
-### `npm run build` fails to minify
+## :memo: License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is [MIT](LICENSE) licensed.
