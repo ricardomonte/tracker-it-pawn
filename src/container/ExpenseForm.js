@@ -69,7 +69,7 @@ const ExpenseForm = ({ expenseCreate, expenseSuccess }) => {
           <input className={TrackerStyle.inputs} id="detail" type="text" value={expense.detail} name="detail" onChange={handleChange} placeholder="E.g. Buy food for fido" />
         </label>
         <label htmlFor="amount" className={TrackerStyle.label}>
-          Amount:
+          Amount (EUR):
           <input className={TrackerStyle.inputs} id="amount" type="number" value={expense.amount} name="amount" onChange={handleChange} />
         </label>
         <label htmlFor="datePayment" className={TrackerStyle.label}>
