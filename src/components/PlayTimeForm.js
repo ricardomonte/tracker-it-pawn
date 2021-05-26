@@ -25,7 +25,7 @@ const PlayTimeForm = ({ id, UpdatePlay }) => {
     <div className={TrackerStyle.containerTotal}>
       <form onSubmit={handleValidation} className={TrackerStyle.container}>
         <label htmlFor="hour" className={TrackerStyle.label}>
-          How much time you spend playing weakly with your dog (aprox):
+          How many hours weekly do you spend playing with your dog (aprox):
           <input className={TrackerStyle.inputs} id="hour" type="number" value={hours} name="hour" onChange={handleChange} placeholder="0" />
         </label>
         <button className={TrackerStyle.btn} type="submit">Submit</button>

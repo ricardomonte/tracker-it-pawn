@@ -45,7 +45,7 @@ const OneDog = ({
           <p className={TrackerStyle.text}>{onlyDog.breed}</p>
         </div>
         <div className={TrackerStyle.playTime}>
-          <h3 className={TrackerStyle.title}>Weekly play time of your friend (approx):</h3>
+          <h3 className={TrackerStyle.title}>Weekly playtime hours of your friend (approx):</h3>
           {
             onlyDog.regular_play_time
               ? (
