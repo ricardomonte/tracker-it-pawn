@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import CommonLinks from '../CommonLinks';
 
-test('Content from About matches snapshot', () => {
+test('Content from CommonLinks matches snapshot', () => {
   const content = render(
     <BrowserRouter>
       <CommonLinks />

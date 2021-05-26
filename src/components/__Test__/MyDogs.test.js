@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import MockData from '../../../tools/MockData';
 import MyDogs from '../MyDogs';
 
-test('Content from Expense matches snapshot', () => {
+test('Content from MyDogs matches snapshot', () => {
   const content = render(
     <BrowserRouter>
       <MyDogs dog={MockData[0]} />

@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import MockData from '../../../tools/MockData';
 import ExpenseChart from '../ExpenseChart';
 
-test('Content from Expense matches snapshot', () => {
+test('Content from ExpenseChart matches snapshot', () => {
   const content = render(<ExpenseChart expense={MockData} />);
   expect(content.container).toMatchSnapshot();
 });
