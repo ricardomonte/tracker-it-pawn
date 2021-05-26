@@ -55,12 +55,12 @@ const SignInForm = ({ userSignIn, messageSuccess }) => {
     <div className={TrackerStyle.containerTotal}>
       <form className={TrackerStyle.container}>
         <label htmlFor="email" className={TrackerStyle.label}>
-          email:
-          <input className={TrackerStyle.inputs} id="email" type="email" value={user.email} name="email" onChange={handleChange} placeholder="your email" />
+          Email:
+          <input className={TrackerStyle.inputs} id="email" type="email" value={user.email} name="email" onChange={handleChange} placeholder="Your email" />
         </label>
         <label htmlFor="password" className={TrackerStyle.label}>
-          password:
-          <input className={TrackerStyle.inputs} id="password" type="password" value={user.password} name="password" onChange={handleChange} placeholder="your name" />
+          Password:
+          <input className={TrackerStyle.inputs} id="password" type="password" value={user.password} name="password" onChange={handleChange} placeholder="Your password" />
         </label>
         <button onClick={handleValidation} className={TrackerStyle.btn} type="button">Submit</button>
       </form>

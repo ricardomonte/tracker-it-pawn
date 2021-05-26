@@ -58,20 +58,20 @@ const SignUpForm = ({ authUser, messageSuccess }) => {
     <div className={TrackerStyle.containerTotal}>
       <form className={TrackerStyle.container}>
         <label htmlFor="name" className={TrackerStyle.label}>
-          name:
-          <input className={TrackerStyle.inputs} id="name" type="text" value={user.name} name="name" onChange={handleChange} placeholder="your name" />
+          Firstname:
+          <input className={TrackerStyle.inputs} id="name" type="text" value={user.name} name="name" onChange={handleChange} placeholder="Your firstname" />
         </label>
         <label htmlFor="lastname" className={TrackerStyle.label}>
-          lastname:
-          <input className={TrackerStyle.inputs} id="lastname" type="text" value={user.lastname} name="lastname" onChange={handleChange} placeholder="your lastname" />
+          Lastname:
+          <input className={TrackerStyle.inputs} id="lastname" type="text" value={user.lastname} name="lastname" onChange={handleChange} placeholder="Your lastname" />
         </label>
         <label htmlFor="email" className={TrackerStyle.label}>
-          email:
-          <input className={TrackerStyle.inputs} id="email" type="email" value={user.email} name="email" onChange={handleChange} placeholder="your email" />
+          Email:
+          <input className={TrackerStyle.inputs} id="email" type="email" value={user.email} name="email" onChange={handleChange} placeholder="Your email" />
         </label>
         <label htmlFor="password" className={TrackerStyle.label}>
-          password:
-          <input className={TrackerStyle.inputs} id="password" type="password" value={user.password} name="password" onChange={handleChange} placeholder="your name" />
+          Password:
+          <input className={TrackerStyle.inputs} id="password" type="password" value={user.password} name="password" onChange={handleChange} placeholder="Your password" />
         </label>
         <button type="button" onClick={handleValidation} className={TrackerStyle.btn}>Submit</button>
       </form>
