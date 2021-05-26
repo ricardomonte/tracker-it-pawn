@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Content from Expense matches snapshot 1`] = `
+exports[`Content from HoursToday matches snapshot 1`] = `
 <div>
   <div>
     <h3>
