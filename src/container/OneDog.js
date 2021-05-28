@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { gsap } from 'gsap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faPaw } from '@fortawesome/free-solid-svg-icons';
 import { getOneDog, updateDog } from '../actions/dogsActions';
@@ -14,10 +15,19 @@ import HoursToday from '../components/HoursToday';
 const OneDog = ({
   match, getDog, onlyDog, updatePlayDog, getHours, myHours,
 }) => {
+  const dogRef = useRef(null);
   useEffect(() => {
     getDog(match.params.id);
     getHours(match.params.id);
   }, []);
+  useEffect(() => {
+    gsap.from(dogRef.current, {
+      duration: 1,
+      autoAlpha: 0,
+      ease: 'none',
+      delay: 0.5,
+    });
+  }, [dogRef]);
 
   const [invisible, setInvisible] = useState(false);
 
@@ -30,7 +40,7 @@ const OneDog = ({
   };
 
   return (
-    <div className={TrackerStyle.containerTotal}>
+    <div className={TrackerStyle.containerTotal} ref={dogRef}>
       <div className={TrackerStyle.container}>
         <div className={TrackerStyle.containerTitle}>
           <FontAwesomeIcon icon={faPaw} size="5x" className={TrackerStyle.paw} />
