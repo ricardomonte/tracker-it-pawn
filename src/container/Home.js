@@ -6,7 +6,7 @@ import Profile from './Profile';
 import TrackerStyle from '../styles/Home.module.css';
 
 const Home = ({ authUser }) => {
-  if (Object.entries(authUser).length > 0) {
+  if (Object.entries(authUser).length > 0 && localStorage.length > 0) {
     return <Profile />;
   }
   return (
