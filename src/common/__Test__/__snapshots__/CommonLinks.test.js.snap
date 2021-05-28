@@ -5,7 +5,9 @@ exports[`Content from CommonLinks matches snapshot 1`] = `
   <div
     class="containerLinks"
   >
-    <div>
+    <div
+      class="containerIcons"
+    >
       <a
         class="linkDog"
         href="/add_dog"
@@ -42,7 +44,9 @@ exports[`Content from CommonLinks matches snapshot 1`] = `
         </svg>
       </a>
     </div>
-    <div>
+    <div
+      class="containerIcons"
+    >
       <a
         class="linkExp"
         href="/create_expense"
@@ -79,7 +83,9 @@ exports[`Content from CommonLinks matches snapshot 1`] = `
         </svg>
       </a>
     </div>
-    <div>
+    <div
+      class="containerIcons"
+    >
       <a
         class="linkExp"
         href="/create_hour"
@@ -117,7 +123,7 @@ exports[`Content from CommonLinks matches snapshot 1`] = `
       </a>
     </div>
     <div
-      class="logOut"
+      class="logOut containerIcons"
     >
       <svg
         aria-hidden="true"

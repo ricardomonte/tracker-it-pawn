@@ -8,6 +8,10 @@
   justify-content: center;
 }
 
+.containerIcons:hover {
+  animation: jump 0.5s;
+}
+
 .linkDog,
 .linkExp {
   text-decoration: none;
@@ -23,3 +27,10 @@
   cursor: pointer;
   color: #aeb1b6;
 }
+
+@keyframes jump {
+  50% {
+    transform: translateY(-5px);
+  }
+}
+

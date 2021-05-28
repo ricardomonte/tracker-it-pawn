@@ -29,6 +29,7 @@
 }
 
 .containerPaw {
+  cursor: pointer;
   text-align: center;
   width: max-content;
 }
