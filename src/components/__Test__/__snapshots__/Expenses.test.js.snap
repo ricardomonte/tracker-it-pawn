@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Content from Expense matches snapshot 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <div
+      class="cardText"
+    >
+      <svg
+        aria-hidden="true"
+        class="svg-inline--fa fa-credit-card fa-w-18 fa-2x credit"
+        data-icon="credit-card"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        viewBox="0 0 576 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 432c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V256H0v176zm192-68c0-6.6 5.4-12 12-12h136c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-40zm-128 0c0-6.6 5.4-12 12-12h72c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM576 80v48H0V80c0-26.5 21.5-48 48-48h480c26.5 0 48 21.5 48 48z"
+          fill="currentColor"
+        />
+      </svg>
+      <h4
+        class="expense"
+      />
+    </div>
+    <div
+      class="expenseProgress"
+    >
+      <h3
+        class="date"
+      >
+        undefined/undefined/undefined
+      </h3>
+      <div
+        style="width: 60px; height: 60px;"
+      >
+        <svg
+          class="CircularProgressbar "
+          data-test-id="CircularProgressbar"
+          viewBox="0 0 100 100"
+        >
+          <path
+            class="CircularProgressbar-trail"
+            d="
+      M 50,50
+      m 0,-46
+      a 46,46 0 1 1 0,92
+      a 46,46 0 1 1 0,-92
+    "
+            fill-opacity="0"
+            stroke-width="8"
+            style="stroke-dasharray: 289.02652413026095px 289.02652413026095px; stroke-dashoffset: 0px;"
+          />
+          <path
+            class="CircularProgressbar-path"
+            d="
+      M 50,50
+      m 0,-46
+      a 46,46 0 1 1 0,92
+      a 46,46 0 1 1 0,-92
+    "
+            fill-opacity="0"
+            stroke-width="8"
+            style="stroke-dasharray: 289.02652413026095px 289.02652413026095px; stroke-dashoffset: NaNpx;"
+          />
+          <text
+            class="CircularProgressbar-text"
+            x="50"
+            y="50"
+          >
+            undefined euros
+          </text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;

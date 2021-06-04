@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Content from HoursToday matches snapshot 1`] = `
+<div>
+  <div>
+    <h3>
+      Hours played this Month (approx)
+    </h3>
+    <svg
+      class="CircularProgressbar "
+      data-test-id="CircularProgressbar"
+      viewBox="0 0 100 100"
+    >
+      <path
+        class="CircularProgressbar-trail"
+        d="
+      M 50,50
+      m 0,-46
+      a 46,46 0 1 1 0,92
+      a 46,46 0 1 1 0,-92
+    "
+        fill-opacity="0"
+        stroke-width="8"
+        style="stroke-dasharray: 289.02652413026095px 289.02652413026095px; stroke-dashoffset: 0px;"
+      />
+      <path
+        class="CircularProgressbar-path"
+        d="
+      M 50,50
+      m 0,-46
+      a 46,46 0 1 1 0,92
+      a 46,46 0 1 1 0,-92
+    "
+        fill-opacity="0"
+        stroke-width="8"
+        style="stroke-dasharray: 289.02652413026095px 289.02652413026095px; stroke-dashoffset: NaNpx;"
+      />
+      <text
+        class="CircularProgressbar-text"
+        x="50"
+        y="50"
+      >
+        NaN %
+      </text>
+    </svg>
+  </div>
+</div>
+`;
